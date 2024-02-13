@@ -13,8 +13,7 @@ The workflow includes extracting Reddit comments using the Reddit API via the Py
 ##### Reddit Comments Extraction:
 * Account Creation: Created a Reddit account to access the Reddit API.
 * App Creation: Created a Reddit App to obtain API keys and credentials.
-* Access Reddit API: taken subreddit called “Canada” community(https://www.reddit.com/r/canada/) and extracted comments for 50 posts (nearly 2700 comments) initially. 
-* Then 100 posts later (nearly 7000 comments)
+* Access Reddit API: taken subreddit called “Canada” community(https://www.reddit.com/r/canada/) and extracted comments for 100 posts (nearly 7000 comments) 
 * Utilized the PRAW (Python Reddit API Wrapper) to extract comments. 
 * Extracted comments are saved: The extracted comments are put into a JSON file for further processing.
 ##### DATA LOADING
