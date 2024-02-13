@@ -42,11 +42,9 @@ The sentiment analysis project provided valuable insights into the complexities 
 * Initially create reddit account and app, then utilized the PRAW (for this execute `collect_reddit_data.ipynb` with your reddit account credentials)
 * After successful execution you can find `reddit_comments_data.json` file, which contain extracted comments with their score.
 * Then to annotate the extracted comments 'annotate_comments.ipynb`, after annotations you will get, `final_dataset.csv`.In contain columns with comment body, score, comment length, and predicted_sentiment
-  ### model for annotations(pretrained model used)
-  model_name = "finiteautomata/bertweet-base-sentiment-analysis"
-  sentiment_analyzer = pipeline("sentiment-analysis", model=model_name)
 * Then performed the preprocessing by executing `preprocessing.ipynb`. I have saved a copy of the dataset as `before_preprocessing.csv`.
 * After preprocessing dataset became `preprocessed_output.csv`, where you can find the tokens,stemmed_tokens, and lemmatized_tokens along with comment body,score and comment_length.
+* You can check the csv files to learn the difference after each step.
 * Now you have the the annotated and preprocessed dataset with you.
 * Next you can execute any of the 3 files
   - `SVM_BOW_feature_extraction_model_build.ipnb`
