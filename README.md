@@ -17,19 +17,18 @@ The workflow includes extracting Reddit comments using the Reddit API via the Py
       Utilized the PRAW (Python Reddit API Wrapper) to extract comments. 
       Extracted comments are saved: The extracted comments are put into a JSON file for further processing.
 ##### DATA LOADING
-      * The data is loaded into a Pandas DataFrame
+      The data is loaded into a Pandas DataFrame
 ##### ANNOTATE DATASET
-      * To annotate the comments, a pre-trained BERTweet sentiment analysis model is employed.
-      * Reference: https://huggingface.co/finiteautomata/bertweet-base-sentiment-analysis
-      * The model is loaded using the Hugging Face Transformers library.
-      * This uses the labels POS, NEG, NEU for sentiment analysis.
-            * To ensure optimal compatibility with the sentiment analysis model, comments are filtered based on their length.
-            * Comments outside the specified range (between min_sequence_length and max_sequence_length) are excluded from further analysis.
-            * The sentiment analysis model is applied to each filtered comment, and the predicted sentiment label is stored in a new column, 'predicted_sentiment'.
+      To annotate the comments, a pre-trained BERTweet sentiment analysis model is employed.
+      Reference: https://huggingface.co/finiteautomata/bertweet-base-sentiment-analysis
+      The model is loaded using the Hugging Face Transformers library.
+      This uses the labels POS, NEG, NEU for sentiment analysis.
+            To ensure optimal compatibility with the sentiment analysis model, comments are filtered based on their length.
+            Comments outside the specified range (between min_sequence_length and max_sequence_length) are excluded from further analysis.
+            The sentiment analysis model is applied to each filtered comment, and the predicted sentiment label is stored in a new column, 'predicted_sentiment'.
 ##### DATA PREPROCESSING:
-    * Following sentiment annotation, the comments data undergoes preprocessing steps to enhance the quality of the text data. This includes tokenization, stop-word removal,lowercasing, and handling special              characters.
-    * Tried to address majority of challenges specific to social media text (hashtags, emojis,
-    slang).
+    Following sentiment annotation, the comments data undergoes preprocessing steps to enhance the quality of the text data. This includes tokenization, stop-word removal,lowercasing, and handling special              characters.
+    Tried to address majority of challenges specific to social media text (hashtags, emojis, slang).
 ##### Feature Extraction:
     * Bag-Of-Words
     * TF-IDF
@@ -37,9 +36,5 @@ The workflow includes extracting Reddit comments using the Reddit API via the Py
 ##### MODEL:
     * Model: SVM
 ## Insights
-The sentiment analysis project provided valuable insights into 
-    * The complexities of natural language processing(NLP)
-    * Emphasizing the need for adaptability, 
-    * Context-aware analysis, and 
-    * Continuous improvement.
+The sentiment analysis project provided valuable insights into the complexities of natural language processing(NLP),emphasizing the need for adaptability,context-aware analysis, and continuous improvement.
 
