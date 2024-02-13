@@ -1,7 +1,8 @@
-# Sentiment Analysis on Reddit Comments
+# SENTIMENT ANALYSIS ON REDDIT COMMENTS 
+Social media platforms generate a massive amount of textual data with diverse sentiments. The objective of this project is to develop a sentiment analysis system capable of automatically classifying social media posts into positive, negative, or neutral sentiments.
 
-## Overview
-This project is aimed at performing sentiment analysis on Reddit comments using various natural language processing (NLP) techniques. Social media platforms provide a rich source of unstructured text
+## OVERVIEW
+This project is aimed at performing sentiment analysis on Reddit comments using various natural language processing (NLP) techniques. Social media platforms provide a rich source of unstructured text.
 data. The data can be converted into valuable information by using sentiment analysis. This project will classify social media post’s comment’s sentiments as Positive (POS), Negative (NEG),
 or Neutral (NEU).
 
@@ -10,12 +11,12 @@ The workflow includes extracting Reddit comments using the Reddit API via the Py
 ## METHODOLOGY:
 ### 1. DATA COLLECTION
 ##### Reddit Comments Extraction:
-Account Creation: Created a Reddit account to access the Reddit API.
-App Creation: Created a Reddit App to obtain API keys and credentials.
-Access Reddit API: The team chose a subreddit called “Canada” community(https://www.reddit.com/r/canada/) and extracted comments for 50 posts (nearly 2700 comments) initially. 
-Then 100 posts later (nearly 7000 comments)
-Utilized the PRAW (Python Reddit API Wrapper) to extract comments. 
-Extracted comments are saved: The extracted comments are put into a JSON file for further processing.
+* Account Creation: Created a Reddit account to access the Reddit API.
+* App Creation: Created a Reddit App to obtain API keys and credentials.
+* Access Reddit API: taken subreddit called “Canada” community(https://www.reddit.com/r/canada/) and extracted comments for 50 posts (nearly 2700 comments) initially. 
+* Then 100 posts later (nearly 7000 comments)
+* Utilized the PRAW (Python Reddit API Wrapper) to extract comments. 
+* Extracted comments are saved: The extracted comments are put into a JSON file for further processing.
 ##### DATA LOADING
 The data is loaded into a Pandas DataFrame
 ##### ANNOTATE DATASET
@@ -37,4 +38,30 @@ Tried to address majority of challenges specific to social media text (hashtags,
 * Model: SVM
 ## Insights
 The sentiment analysis project provided valuable insights into the complexities of natural language processing(NLP),emphasizing the need for adaptability,context-aware analysis, and continuous improvement.
+
+## Usage examples
+* Initially create reddit account and app, then utilized the PRAW (for this execute `collect_reddit_data.ipynb` with your reddit account credentials)
+* After successful execution you can find `reddit_comments_data.json` file, which contain extracted comments with their score.
+* Then to annotate the extracted comments 'annotate_comments.ipynb`, after annotations you will get, `final_dataset.csv`.In contain columns with comment body, score, comment length, and predicted_sentiment
+  ### model for annotations(pretrained model used)
+  model_name = "finiteautomata/bertweet-base-sentiment-analysis"
+  sentiment_analyzer = pipeline("sentiment-analysis", model=model_name)
+* Then performed the preprocessing by executing `preprocessing.ipynb`. I have saved a copy of the dataset as `before_preprocessing.csv`.
+* After preprocessing dataset became `preprocessed_output.csv`, where you can find the tokens,stemmed_tokens, and lemmatized_tokens along with comment body,score and comment_length.
+* Now you have the the annotated and preprocessed dataset with you.
+* Next you can execute any of the 3 files
+  - `SVM_BOW_feature_extraction_model_build.ipnb`
+  - `SVM_tfidf_feature_extraction_model_build.ipnb`
+  - `SVM_BERT_feature_extraction_model_build.ipnb`
+# Results
+
+## Model Performance
+-----------------------------------------------------------------------
+| Feature Extraction | Model | Training Accuracy  | Testing Accuracy  |
+| ------------------ | ----- | ------------------ | ----------------- |
+| BOW                | SVM   | 0.8147             | 0.6491            |
+| TF-IDF             | SVM   | 0.8737             | 0.6556            |
+| BERT               | SVM   | 0.8520             | 0.7337            |
+-----------------------------------------------------------------------
+
 
