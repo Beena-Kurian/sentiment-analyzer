@@ -52,13 +52,13 @@ The sentiment analysis project provided valuable insights into the complexities 
   - `SVM_BERT_feature_extraction_model_build.ipnb`
 # Results
 
-## Model Performance
------------------------------------------------------------------------
-| Feature Extraction | Model | Training Accuracy  | Testing Accuracy  |
-| ------------------ | ----- | ------------------ | ----------------- |
-| BOW                | SVM   | 0.8147             | 0.6491            |
-| TF-IDF             | SVM   | 0.8737             | 0.6556            |
-| BERT               | SVM   | 0.8520             | 0.7337            |
------------------------------------------------------------------------
+## SVM Model Performance 
+-------------------------------------------
+| Feature Extraction |  Testing Accuracy  |
+| ------------------ | ------------------ | 
+| BOW                | 0.6491             |
+| TF-IDF             | 0.6556             |
+| BERT               | 0.7337            |
+-------------------------------------------
 
 
